@@ -7,7 +7,7 @@ gj = json.loads(js)
 
 for feature in gj['features']:
 
-    xfeature = {"type": "Feature", "properties": {},
+    xfeature = {"type": "Feature", "properties": feature["properties"],
                 "geometry": {"type": "Polygon"}}
     xfeature['geometry']['coordinates'] = feature['geometry']['coordinates']
     output = {"type": "FeatureCollection", "features": [xfeature]}
